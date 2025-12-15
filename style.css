@@ -1,0 +1,92 @@
+body {
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Para que el confeti no haga scroll */
+}
+
+.pantalla {
+  text-align: center;
+  position: relative; /* Para estar encima del confeti */
+  z-index: 10;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+button:hover {
+  background-color: #333333;
+}
+
+img {
+  border-radius: 10px;
+}
+
+/* Estilos para el botón de regresar centrado */
+#pantalla-meme #btn-regresar-premio {
+  position: static;
+  display: block;
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+#pantalla-meme #btn-regresar-premio:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos del confeti */
+#confeti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5; /* Detrás de las pantallas */
+  pointer-events: none; /* No interfiere con los botones */
+}
+
+.confeti-pieza {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  opacity: 0.8;
+  animation: caer linear infinite;
+}
+
+/* Colores diferentes para el confeti */
+.confeti-pieza.color1 { background-color: #ff0000; }
+.confeti-pieza.color2 { background-color: #00ff00; }
+.confeti-pieza.color3 { background-color: #0000ff; }
+.confeti-pieza.color4 { background-color: #ffff00; }
+.confeti-pieza.color5 { background-color: #ff00ff; }
+
+/* Animación de caída */
+@keyframes caer {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
